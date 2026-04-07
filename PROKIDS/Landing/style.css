@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #57bf8c;
+  color: #ffffff;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 10px 30px;
+  gap: 20px;
+  background-color: var(--section-color);
+  box-shadow: inset rgba(42, 42, 42, 0.4901960784) 0 0 50px;
+}
+section:nth-of-type(2) {
+  --section-color: #57bf8c;
+  --section-dark-color: #007a44;
+}
+section:nth-of-type(3) {
+  --section-color: #3ec1d3;
+  --section-dark-color: #00446d;
+}
+section:nth-of-type(4) {
+  --section-color: #bae1f6;
+  --section-dark-color: #1f3970;
+}
+section:nth-of-type(5) {
+  --section-color: #ffffff;
+}
+
+.side-image {
+  width: 100%;
+  max-width: 400px;
+  border: 5px solid var(--section-dark-color);
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 0 0 10px;
+}
+
+article {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 15px;
+  padding-left: 25px;
+  position: relative;
+  box-shadow: inset var(--section-dark-color) 10px 0 0;
+}
+article hr {
+  border: 3px solid var(--section-dark-color);
+  border-radius: 10px;
+  margin: 20px 0;
+}
+article ul {
+  list-style-type: none;
+}
+article ol {
+  list-style: none;
+  counter-reset: my-counter;
+  padding-left: 0;
+}
+article ol li {
+  width: auto;
+  counter-increment: my-counter;
+  position: relative;
+  margin-left: 5px;
+  padding-left: 35px;
+  margin-bottom: 15px;
+}
+article ol li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--section-dark-color);
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1, h2, h3 {
+  background-color: var(--section-dark-color);
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  width: 100%;
+  padding: 15px;
+  font-size: 32px;
+  text-align: center;
+}
+
+h2 {
+  border: 5px double #ffffff;
+}
+
+.icon {
+  color: var(--section-dark-color);
+  margin-right: 10px;
+  width: 10px;
+  font-size: 1.5em;
+}
+
+.button {
+  width: 100%;
+  max-width: 300px;
+  background-color: #e3ff38;
+  color: #000000;
+  border-radius: 100px;
+  padding: 15px 20px;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 0 0 10px;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 0 10px 20px;
+}
+
+#section1 {
+  min-height: 100vh;
+  background: url(img/_DSC0767.jpg) no-repeat center center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  text-align: center;
+}
+#section1 #logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+#section1 h1 {
+  font-size: 50px;
+}
+#section1 p:first-of-type {
+  font-size: 26px;
+  margin-bottom: 100px;
+}
+
+#section2 ul li {
+  margin-bottom: 15px;
+}
+
+#section3 .card {
+  width: 100%;
+  background-color: var(--section-dark-color);
+  border-radius: 10px;
+}
+#section3 .card h3 {
+  border-radius: 10px 10px 0 0;
+  text-align: left;
+  font-size: 26px;
+}
+#section3 .card h3 .icon {
+  color: #ffffff;
+  font-size: 1.2em;
+}
+#section3 .card article {
+  box-shadow: none;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}
+#section3 .card article ul {
+  list-style: inside disc;
+}
+
+#section4 article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--section-dark-color);
+  color: #ffffff;
+}
+#section4 article h4 {
+  font-size: 24px;
+  text-align: center;
+}
+#section4 article a {
+  margin-top: 20px;
+  background-color: #40cf4b;
+  color: #ffffff;
+}
+#section4 article a:hover {
+  background-color: rgb(44.1841004184, 175.8158995816, 54.309623431);
+}
+
+#section5 h2 {
+  color: #000000;
+}/*# sourceMappingURL=style.css.map */
