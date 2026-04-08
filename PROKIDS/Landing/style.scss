@@ -11,13 +11,14 @@ $color-shade: #2a2a2a7d;
 
 $color-global-button: #e3ff38;
 $color-button-whatsapp: #40cf4b;
+$body-background: #192d26;
 
-$color-section2: #57bf8c;
-$color-section2-dark: #007a44;
-$color-section3: #3ec1d3;
-$color-section3-dark: #00446d;
-$color-section4: #bae1f6;
-$color-section4-dark: #1f3970;
+$color-global-1: #57bf8c;
+$color-global-2-dark: #007a44;
+$color-global-3: #3ec1d3;
+$color-global-3-dark: #00446d;
+$color-global-4: #bae1f6;
+$color-global-4-dark: #1f3970;
 
 
 // === RESPONSIVE BREAKPOINTS === //
@@ -58,30 +59,40 @@ $breakpoint-lg: 1200px;
 
 body {
     font-family: $font-primary;
-    background-color: $color-section2;
+    background-color: $body-background;
     color: $color-light;
 }
 
 section {
     @include flex-center;
+    @include respond-to(md) {
+        
+    }
 
     padding: 10px 10px 30px;
     gap: 20px;
     background-color: var(--section-color);
     box-shadow: inset $color-shade 0 0 50px;
 
+    .left-box, .right-box {
+        @include flex-center;
+
+        width: 100%;
+        gap: 20px;
+    }
+
     // Alternar colores de artículos
     &:nth-of-type(2) { 
-        --section-color: #{$color-section2}; 
-        --section-dark-color: #{$color-section2-dark};
+        --section-color: #{$color-global-1}; 
+        --section-dark-color: #{$color-global-2-dark};
     }
     &:nth-of-type(3) { 
-        --section-color: #{$color-section3}; 
-        --section-dark-color: #{$color-section3-dark};
+        --section-color: #{$color-global-3}; 
+        --section-dark-color: #{$color-global-3-dark};
     }
     &:nth-of-type(4) { 
-        --section-color: #{$color-section4}; 
-        --section-dark-color: #{$color-section4-dark};
+        --section-color: #{$color-global-4}; 
+        --section-dark-color: #{$color-global-4-dark};
     }
     &:nth-of-type(5) { --section-color: #{$color-light}; }
 }
@@ -90,7 +101,7 @@ section {
     width: 100%;
     max-width: 400px;
     border: 5px solid var(--section-dark-color);
-    box-shadow: $color-shade 0 0 10px;
+    box-shadow: $color-shade 5px 5px 10px;
 }
 
 article {
@@ -101,7 +112,9 @@ article {
     padding: 15px;
     padding-left: 25px;
     position: relative;
-    box-shadow: inset var(--section-dark-color) 10px 0 0;
+    box-shadow: 
+        inset var(--section-dark-color) 10px 0 0,
+        $color-shade 5px 5px 5px;
 
     hr {
         border: 3px solid var(--section-dark-color);
@@ -153,6 +166,7 @@ h1, h2, h3 {
 
 h2 {
     border: 5px double $color-light;
+    box-shadow: $color-shade 5px 5px 5px;
 }
 
 .icon {
@@ -174,12 +188,12 @@ h2 {
     text-align: center;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: $color-shade 0 0 10px;
+    box-shadow: $color-shade 5px 5px 5px;
     transition: all 0.3s ease;
 
     &:hover {
         transform: translateY(-5px);
-        box-shadow: $color-shade 0 10px 20px;
+        box-shadow: $color-shade 5px 10px 15px;
     }
 }
 
@@ -191,12 +205,25 @@ h2 {
 
 // LANDING
 #section1 {
+    position: relative;
+    overflow: hidden;
     min-height: 100vh;
-    background: url(img/_DSC0767.jpg) no-repeat center center;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
+    background: #000;
     text-align: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    > *:not(#slider-bg) {
+        position: relative;
+        z-index: 3;
+    }
 
     #logo {
         width: 200px;
@@ -210,6 +237,10 @@ h2 {
     p:first-of-type {
         font-size: 26px;
         margin-bottom: 100px;
+    }
+
+    h1, p {
+        text-shadow: #000 0 0 5px;
     }
 }
 
@@ -226,6 +257,7 @@ h2 {
         width: 100%;
         background-color: var(--section-dark-color);
         border-radius: 10px;
+        box-shadow: $color-shade 5px 5px 5px;
 
         h3 {
             border-radius: 10px 10px 0 0;
@@ -277,7 +309,88 @@ h2 {
 
 // RESEÑAS
 #section5 {
-    h2 {
+    box-shadow: none;
+
+    h2 { 
         color: $color-dark;
+        box-shadow: none;
+        border: none;
+    }
+
+    .slider-reviews-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        overflow: hidden;
+        border: 5px solid #4b4b4b;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        padding: 20px;
+
+        .reviews-logo {
+            width: 250px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+
+        .slider-reviews {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            cursor: grab;
+
+            &:active { 
+                cursor: grabbing; 
+            }
+        }
+
+        .review {
+            width: 100%;
+            max-width: 400px;
+            background-color: #cfcfcf;
+            color: $color-dark;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: inset #8c8c8c 10px 0 0;
+            flex-shrink: 0;
+
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+            -webkit-user-drag: none;
+            
+
+            h4 {
+                font-family: $font-secondary;
+                font-size: 22px;
+                color: $color-dark;
+                margin-bottom: 10px;
+            }
+
+            p { 
+                line-height: 1.6; 
+            }
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                margin-bottom: 10px;
+                border-radius: 50%;
+                background-color: #dddcdc;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+
+                &.active {
+                    background-color: #8c8c8c;
+                    transform: scale(1.3);
+                }
+            }
+        }
     }
 }
