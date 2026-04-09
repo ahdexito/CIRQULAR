@@ -12,11 +12,13 @@
         <section id="section1">
             <div id="slider-bg"></div>
 
-            <img src="img/logo-prokids.png" alt="Logo" id="logo">
-            <h1>LOS DOMINGOS SON DE LA LIGA PROKIDS</h1>
-            <p>MÁS MINUTOS, MENOS PRESIÓN, MÁS DIVERSIÓN</p>
-            <a href="#" class="button">INSCRIBIRME</a>
-            <p>PLAZAS LIMITADAS POR CATEGORÍA Y POSICIÓN</p>
+            <img src="img/logo-prokids.png" alt="Logo" id="logo" class="anim-slide-down">
+            <h1 class="anim-slide-left delay-1">LOS DOMINGOS SON DE LA LIGA PROKIDS</h1>
+            <p class="anim-slide-right delay-1 text-1">MÁS MINUTOS, MENOS PRESIÓN, MÁS DIVERSIÓN</p>
+            <div class="anim-slide-up delay-2">
+                <a href="#" class="button">INSCRIBIRME</a>
+                <p class="text-2">PLAZAS LIMITADAS POR CATEGORÍA Y POSICIÓN</p>
+            </div>
         </section>
 
         <section id="section2">
@@ -49,83 +51,85 @@
         </section>
 
         <section id="section3">
-            <div class="left-box">
-                <h2>¿CÓMO FUNCIONA LA LIGA PROKIDS?</h2>
+            <h2>¿CÓMO FUNCIONA LA LIGA PROKIDS?</h2>
 
-                <article>
-                    <ol>
-                        <li><b>Regístrate</b> en la web.</li>
-                        <li>Crea la ficha del jugador.</li>
-                        <li>Compra tu próxima jornada (individual o pack) antes del <b>jueves a las 23:59h.</b></li>
-                        <li>El <b>viernes</b> recibes la notificación de confirmación del horario del partido.</li>
-                        <li>El <b>domingo</b> llega al campo, recoge tu equipación y diviértete.</li>
-                    </ol>
-
-                    <hr>
-
-                    <ul>
-                        <li><i class="fa-solid fa-award icon"></i>Todos los jugadores suman puntos por <b>actitud y rendimiento</b> que pueden canjear por <b>premios</b> y revisar en su perfil de la web.</li>
-                        <hr>
-                        <li><i class="fa-solid fa-ticket icon"></i>Elige las jornadas en las que quieres participar. <b>Si no puedes asistir</b>, haciendo click en el botón <b>"NO VOY"</b> te guardaremos la inscripción para la próxima.</li>
-                    </ul>
-                </article>
-
-                <a href="#" class="button">INSCRIBIRME</a>
-
-                <article>
-                    <p><b>IMPORTANTE: si tienes dudas de cómo registrarte, rellena el formulario de abajo y estaremos encantados de ayudarte.</b></p>
-                    <br>
-                    <p>Las plazas son limitadas por categoría y posición.</p>
-                    <br>
-                    <p><i>Sin cuotas fijas, sin compromisos. Solo fútbol y diversión cada domingo.</i></p>
-                </article>
-            </div>
-            
-            <div class="right-box">
-                <div class="card">
-                    <h3><i class="fa-solid fa-coins icon"></i></i>PRECIO</h3>
-
+            <div class="articles-container">
+                <div class="left-box">
                     <article>
-                        <p><b>14 € por jornada (sin compromiso fijo)</b></p>
-                        <p><i>Aprovecha los descuentos por la compra de packs.</i></p>
+                        <ol>
+                            <li><b>Regístrate</b> en la web.</li>
+                            <li>Crea la ficha del jugador.</li>
+                            <li>Compra tu próxima jornada (individual o pack) antes del <b>jueves a las 23:59h.</b></li>
+                            <li>El <b>viernes</b> recibes la notificación de confirmación del horario del partido.</li>
+                            <li>El <b>domingo</b> llega al campo, recoge tu equipación y diviértete.</li>
+                        </ol>
+
                         <hr>
-                        <p><b>Packs disponibles:</b></p>
+
                         <ul>
-                            <li>Pack 5 jornadas → 65 € (13 €/jornada)</li>
-                            <li>Pack 10 jornadas → 120 € (12 €/jornada)</li>
+                            <li><i class="fa-solid fa-award icon"></i>Todos los jugadores suman puntos por <b>actitud y rendimiento</b> que pueden canjear por <b>premios</b> y revisar en su perfil de la web.</li>
+                            <hr>
+                            <li><i class="fa-solid fa-ticket icon"></i>Elige las jornadas en las que quieres participar. <b>Si no puedes asistir</b>, haciendo click en el botón <b>"NO VOY"</b> te guardaremos la inscripción para la próxima.</li>
                         </ul>
                     </article>
-                </div>
 
-                <div class="card">
-                    <h3><i class="fa-solid fa-map-pin icon"></i>UBICACIÓN</h3>
+                    <a href="#" class="button">INSCRIBIRME</a>
 
                     <article>
-                        <p><b>Polideportivo Juan Carlos I (Algorfa)</b></p>
+                        <p><b>IMPORTANTE: si tienes dudas de cómo registrarte, rellena el formulario de abajo y estaremos encantados de ayudarte.</b></p>
+                        <br>
+                        <p>Las plazas son limitadas por categoría y posición.</p>
+                        <br>
+                        <p><i>Sin cuotas fijas, sin compromisos. Solo fútbol y diversión cada domingo.</i></p>
                     </article>
                 </div>
+                
+                <div class="right-box">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-coins icon"></i></i>PRECIO</h3>
 
-                <div class="card">
-                    <h3><i class="fa-solid fa-children icon"></i>EDADES</h3>
+                        <article>
+                            <p><b>14 € por jornada (sin compromiso fijo)</b></p>
+                            <p><i>Aprovecha los descuentos por la compra de packs.</i></p>
+                            <hr>
+                            <p><b>Packs disponibles:</b></p>
+                            <ul>
+                                <li>Pack 5 jornadas → 65 € (13 €/jornada)</li>
+                                <li>Pack 10 jornadas → 120 € (12 €/jornada)</li>
+                            </ul>
+                        </article>
+                    </div>
 
-                    <article>
-                        <p><b>De 4 a 14 años (Prebenjamín a Infantil)</b></p>
-                    </article>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-map-pin icon"></i>UBICACIÓN</h3>
+
+                        <article>
+                            <p><b>Polideportivo Juan Carlos I (Algorfa)</b></p>
+                        </article>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fa-solid fa-children icon"></i>EDADES</h3>
+
+                        <article>
+                            <p><b>De 4 a 14 años (Prebenjamín a Infantil)</b></p>
+                        </article>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fa-solid fa-alarm-clock icon"></i>HORARIO</h3>
+
+                        <article>
+                            <p><b>Domingos por la mañana (1h 30min):</b></p>
+                            <ul>
+                                <li>21 minutos de calentamiento.</li>
+                                <li>1 hora de partido (4 tiempos de 15 min + descansos de 3 min).</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <a href="#" class="button">INSCRIBIRME</a>
                 </div>
-
-                <div class="card">
-                    <h3><i class="fa-solid fa-alarm-clock icon"></i>HORARIO</h3>
-
-                    <article>
-                        <p><b>Domingos por la mañana (1h 30min):</b></p>
-                        <ul>
-                            <li>21 minutos de calentamiento.</li>
-                            <li>1 hora de partido (4 tiempos de 15 min + descansos de 3 min).</li>
-                        </ul>
-                    </article>
-                </div>
-
-                <a href="#" class="button">INSCRIBIRME</a>
             </div>
         </section>
 
@@ -134,9 +138,64 @@
                 <h2>¿TIENES ALGUNA DUDA O NECESITAS AYUDA?</h2>
 
                 <article>
-                    <p><h4>CONTACTA CON NOSOTROS</h4></p>
+                    <h4>CONTACTA CON NOSOTROS</h4>
                     <p>Si necesitas ayuda para inscribirte, contacta con nosotros y reservaremos tu plaza.</p>
                     <a href="#" class="button" id="whatsapp-button"><i class="fa-brands fa-whatsapp"></i> ENVIAR UN MENSAJE</a>
+                </article>
+
+                <article>
+                    <h4>O A TRAVÉS DEL FORMULARIO</h4>
+
+                    <form action="procesar.php" method="POST">
+                        <div style="display: none;">
+                            <input type="text" name="hp_field" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="nombre">Nombre del padre/madre/tutor</label>
+                            <input type="text" name="nombre" id="nombre" required autocomplete="name">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="edad">¿Qué edad tiene tu hijo/a?</label>
+                            <select name="edad" id="edad" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="4-6">De 4 a 6 años (Prebenjamín)</option>
+                                <option value="7-10">De 7 a 10 años (Benjamín)</option>
+                                <option value="11-14">De 11 a 14 años (Alevín/Infantil)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="disponible">Los partidos se realizan un domingo por la mañana, ¿tu hijo/a tendría disponibilidad?</label>
+                            <select name="disponible" id="disponible" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="si">Sí, sin problema</option>
+                                <option value="no">No, no tiene disponibilidad</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" name="telefono" id="telefono" required autocomplete="tel" pattern="[0-9+ ]{9,15}">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required autocomplete="email">
+                        </div>
+
+                        <div class="form-row">
+                            <p>He leído y acepto la <a href="https://www.ligaprokids.es/privacy" target="_blank">Política de Privacidad</a></p>
+                            
+                            <div class="checkbox-row">
+                                <input type="checkbox" name="privacidad" id="privacidad" required>
+                                <span for="privacidad">Sí, acepto</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button">ENVIAR SOLICITUD</button>
+                    </form>
                 </article>
             </div>
         </section>
@@ -150,43 +209,42 @@
 
                     <div class="slider-reviews" id="sliderReviews">
                         <div class="review">
-                            <h4>Carlos</h4>
-                            <p>La verdad, no puedo estar más contento. En su anterior equipo, Hugo jugaba poquito y salía del campo desanimado. Desde que está en Liga ProKids, vuelve con una sonrisa de oreja a oreja. Juega mucho más, se divierte y ha recuperado las ganas de mejorar. Me encanta que aquí no hay esa presión de ganar, solo de disfrutar y aprender. ¡Ha sido un cambio total!</p>
+                            <div class="review-header">
+                                <div class="user-img">
+                                    <img src="img/testimonial-1.png" alt="">
+                                </div>
+                                <div class="review-user">
+                                    <h4>María G.</h4>
+                                    <i>Madre de Alejandro, 9 años</i>
+                                </div>
+                            </div>
+                            <p>Mi hijo ha mejorado muchísimo desde que se unió a Liga ProKids. Le encanta el sistema de logros y está siempre motivado para el siguiente partido.</p>
                         </div>
 
                         <div class="review">
-                            <h4>Miguel</h4>
-                            <p>Alba estaba a punto de dejar el fútbol porque en su club apenas la ponían a jugar. Probamos una jornada en Liga ProKids y nos encantó. Hay muy buen ambiente, la tratan genial y puede jugar sin estar atada a un equipo fijo. Ahora espera el fin de semana con ilusión. Sinceramente, fue lo mejor que pudimos hacer.</p>
+                            <div class="review-header">
+                                <div class="user-img">
+                                    <img src="img/testimonial-2.png" alt="">
+                                </div>
+                                <div class="review-user">
+                                    <h4>Carlos R.</h4>
+                                    <i>Padre de Laura, 8 años</i>
+                                </div>
+                            </div>
+                            <p>La organización es excelente y los entrenadores son muy profesionales. Mi hija disfruta cada partido y ha hecho muchos amigos.</p>
                         </div>
 
                         <div class="review">
-                            <h4>Pilar</h4>
-                            <p>Inscribí a mi hijo Dani para probar una jornada y desde entonces no quiere faltar ni una. Le emociona ponerse la camiseta, calentar, jugar… se siente parte de algo. Me gusta que todo sea sin compromiso, vas cuando puedes y punto. Además, los entrenadores son súper atentos con los peques. Se nota que lo hacen con cariño.</p>
-                        </div>
-
-                        <div class="review">
-                            <h4>Elena</h4>
-                            <p>Lo que más valoro de Liga ProKids es la flexibilidad. Mi hijo Javi tiene una agenda muy liada con otras extraescolares y el hecho de poder apuntarlo solo las semanas que podemos es una maravilla. Sin cuotas fijas ni presiones de club. Además, el ambiente entre los padres es estupendo y él se lo pasa en grande compitiendo de forma sana.</p>
-                        </div>
-
-                        <div class="review">
-                            <h4>Roberto</h4>
-                            <p>Buscábamos algo donde Lucas pudiera jugar sin sentirse juzgado por su nivel, y aquí lo hemos encontrado. En otros sitios solo juegan los "buenos", pero en esta liga todos tienen su momento de protagonismo. Ha ganado muchísima confianza en sí mismo y ya se atreve a pedir el balón. Verle disfrutar así no tiene precio.</p>
-                        </div>
-
-                        <div class="review">
-                            <h4>Sonia</h4>
-                            <p>A mi hija Sofía le encanta la dinámica de los partidos. Al no haber una clasificación estricta, juegan con mucha más libertad y alegría. Los monitores transmiten unos valores de compañerismo que ya no se ven tanto en el fútbol federado. Es el lugar perfecto para que los niños se enamoren del deporte por el puro placer de jugar.</p>
-                        </div>
-
-                        <div class="review">
-                            <h4>Javier</h4>
-                            <p>Impresionante el cambio de actitud de mi hijo Marco. Antes se ponía nervioso antes de los partidos, pero en Liga ProKids se siente cómodo desde el minuto uno. Le gusta mucho que cada jornada sea una experiencia nueva y conocer a otros niños. Como padre, agradezco la facilidad para inscribirlo y la buena organización que tienen siempre.</p>
-                        </div>
-
-                        <div class="review">
-                            <h4>Marta</h4>
-                            <p>Vinimos por recomendación de un amigo y nos hemos quedado fijos. Mi pequeño Leo es muy tímido, pero el trato de los entrenadores ha sido tan humano que se integró rápido. Es un alivio encontrar un sitio que priorice el bienestar emocional del niño por encima del resultado del marcador. ¡Totalmente recomendable para empezar en el fútbol!</p>
+                            <div class="review-header">
+                                <div class="user-img">
+                                    <img src="img/testimonial-3.png" alt="">
+                                </div>
+                                <div class="review-user">
+                                    <h4>Ana M.</h4>
+                                    <i>Madre de Daniel, 10 años</i>
+                                </div>
+                            </div>
+                            <p>Liga ProKids ha sido una experiencia increíble para toda la familia. Los niños aprenden valores importantes mientras se divierten.</p>
                         </div>
                     </div>
 
@@ -211,6 +269,7 @@
 
         <script src="js/slider-bg.js"></script>
         <script src="js/slider-reviews.js"></script>
+        <script src="js/form-verify.js"></script>
     </main>
 </body>
 </html>
