@@ -411,6 +411,8 @@ img {
     article {
         @include flex-center;
 
+        box-shadow: $color-shade 5px 5px 5px;
+        padding: 15px;
         background-color: $color-global-4-dark;
         color: $color-light;
 
@@ -424,6 +426,14 @@ img {
             margin-top: 20px;
             background-color: $color-button-whatsapp;
             color: $color-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            i {
+                font-size: 1.7em;
+            }
         }
     }
 

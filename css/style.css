@@ -352,6 +352,8 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
+  padding: 15px;
   background-color: #1f3970;
   color: #ffffff;
 }
@@ -364,6 +366,13 @@ img {
   margin-top: 20px;
   background-color: #40cf4b;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#section4 article a i {
+  font-size: 1.7em;
 }
 #section4 form {
   display: flex;
