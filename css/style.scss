@@ -223,6 +223,14 @@ h2 {
     text-shadow: $color-shade 3px 3px;
 }
 
+img {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
 .icon {
     color: var(--section-dark-color);
     margin-right: 10px;
@@ -534,6 +542,7 @@ h2 {
                     margin-bottom: 10px;
                     background-color: #ffffff;
                     border-radius: 100px;
+                    padding-right: 10px;
 
                     img {
                         width: 50px;

@@ -172,6 +172,13 @@ h2 {
   text-shadow: rgba(42, 42, 42, 0.4901960784) 3px 3px;
 }
 
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-drag: none;
+}
+
 .icon {
   color: var(--section-dark-color);
   margin-right: 10px;
@@ -453,6 +460,7 @@ h2 {
   margin-bottom: 10px;
   background-color: #ffffff;
   border-radius: 100px;
+  padding-right: 10px;
 }
 #section5 .left-box .slider-reviews-wrapper .review .review-header img {
   width: 50px;
