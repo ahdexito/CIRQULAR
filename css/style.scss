@@ -245,7 +245,7 @@ img {
     color: $color-dark;
     border: 3px solid $color-dark;
     border-radius: 100px;
-    padding: 15px 10px;
+    padding: 15px 50px;
     font-size: 24px;
     text-decoration: none;
     text-align: center;
@@ -422,17 +422,26 @@ img {
             margin-bottom: 20px;
         }
 
-        a {
-            margin-top: 20px;
-            background-color: $color-button-whatsapp;
-            color: $color-light;
+        .whatsapp-button {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            width: 100%;
+            background-color: $color-button-whatsapp;
+            color: $color-light;
+            margin-top: 20px;
+            border: none;
 
             i {
                 font-size: 1.7em;
+            }
+
+            span {
+                width: max-content;
+                flex-grow: 0;
+                line-height: 1.2;
+                text-align: center;
             }
         }
     }

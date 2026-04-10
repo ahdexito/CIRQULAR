@@ -193,7 +193,7 @@ img {
   color: #000000;
   border: 3px solid #000000;
   border-radius: 100px;
-  padding: 15px 10px;
+  padding: 15px 50px;
   font-size: 24px;
   text-decoration: none;
   text-align: center;
@@ -362,17 +362,26 @@ img {
   text-align: center;
   margin-bottom: 20px;
 }
-#section4 article a {
-  margin-top: 20px;
-  background-color: #40cf4b;
-  color: #ffffff;
+#section4 article .whatsapp-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
+  background-color: #40cf4b;
+  color: #ffffff;
+  margin-top: 20px;
+  border: none;
 }
-#section4 article a i {
+#section4 article .whatsapp-button i {
   font-size: 1.7em;
+}
+#section4 article .whatsapp-button span {
+  width: -moz-max-content;
+  width: max-content;
+  flex-grow: 0;
+  line-height: 1.2;
+  text-align: center;
 }
 #section4 form {
   display: flex;
