@@ -35,7 +35,7 @@ body {
 }
 
 section {
-  padding: 20px 10px 100px;
+  padding: 20px 5% 100px;
   gap: 20px;
   background-color: var(--section-color);
   box-shadow: inset rgba(42, 42, 42, 0.4901960784) 0 0 50px;
@@ -72,25 +72,23 @@ section .left-box, section .right-box {
   justify-content: center;
   flex-direction: column;
 }
-@media (max-width: 900px) {
-  section .left-box, section .right-box {
-    max-width: 600px;
-    margin: auto;
-  }
-}
-section:nth-of-type(2) {
+section#que-es {
   --section-color: #57bf8c;
   --section-dark-color: #007a44;
 }
-section:nth-of-type(3) {
+section#como-funciona {
   --section-color: #3ec1d3;
   --section-dark-color: #00446d;
 }
-section:nth-of-type(4) {
+section#para-ti {
+  --section-color: #57bf8c;
+  --section-dark-color: #007a44;
+}
+section#dudas {
   --section-color: #bae1f6;
   --section-dark-color: #1f3970;
 }
-section:nth-of-type(5) {
+section#reviews {
   --section-color: #ffffff;
 }
 
@@ -242,7 +240,7 @@ img {
   animation-delay: 0.6s;
 }
 
-#section1 {
+#landing {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -250,7 +248,7 @@ img {
   text-align: center;
   flex-direction: column;
 }
-#section1::after {
+#landing::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -258,111 +256,150 @@ img {
   z-index: 2;
   pointer-events: none;
 }
-#section1 > *:not(#slider-bg) {
+#landing > *:not(#slider-bg) {
   position: relative;
   z-index: 3;
 }
-#section1 #logo {
+#landing #logo {
   width: 200px;
   margin: 0 auto 20px;
 }
-#section1 h1 {
+#landing h1 {
   font-size: 50px;
 }
-#section1 .text-1 {
+#landing .text-1 {
   font-size: 26px;
   margin-bottom: 50px;
 }
-#section1 .text-2 {
+#landing .text-2 {
   margin-top: 30px;
 }
-#section1 h1, #section1 p {
+#landing h1, #landing p {
   text-shadow: #000 0 0 5px;
 }
 
-#section2 ul li {
+#que-es ul li {
   margin-bottom: 15px;
 }
 
-#section3 {
+#como-funciona {
   flex-direction: column;
 }
-#section3 .articles-container {
+#como-funciona .articles-container {
   display: flex;
   gap: 20px;
 }
 @media (max-width: 900px) {
-  #section3 .articles-container {
+  #como-funciona .articles-container {
     flex-direction: column;
   }
 }
-#section3 .card {
+#como-funciona article {
+  display: flex;
+  flex-direction: column;
+}
+#como-funciona article .button {
+  font-size: 1em;
+  margin-top: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#como-funciona .card {
   width: 100%;
   background-color: var(--section-dark-color);
   border-radius: 10px;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
 }
-#section3 .card h3 {
+#como-funciona .card h3 {
   border-radius: 10px 10px 0 0;
   text-align: left;
   font-size: 26px;
   text-shadow: rgba(42, 42, 42, 0.4901960784) 3px 3px;
 }
-#section3 .card h3 .icon {
+#como-funciona .card h3 .icon {
   color: #ffffff;
   font-size: 1.2em;
 }
-#section3 .card article {
+#como-funciona .card article {
   box-shadow: none;
   width: calc(100% - 10px);
   margin-left: 10px;
 }
-#section3 .card article ul {
+#como-funciona .card article ul {
   list-style: inside disc;
 }
-@media (max-width: 1200px) {
-  #section3 .right-box .button {
-    display: none;
-  }
-}
-@media (min-width: 1201px) {
-  #section3 .right-box .button {
-    display: none;
-  }
-}
-@media (max-width: 900px) {
-  #section3 .left-box .button {
-    display: none;
-  }
-  #section3 .right-box .button {
-    display: block;
-  }
-}
 
-#section4 .left-box {
-  max-width: 60%;
+#para-ti {
+  flex-direction: column;
 }
-@media (max-width: 900px) {
-  #section4 .left-box {
-    max-width: 600px;
-  }
+#para-ti article {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-#section4 article {
+#para-ti article p {
+  flex: 1;
+}
+#para-ti article i {
+  font-size: 2.3em;
+  flex: 0;
+  color: var(--section-dark-color);
+}
+#para-ti .card {
+  background-color: var(--section-dark-color);
+  padding: 20px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+#para-ti .card h4 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#dudas {
+  flex-direction: column;
+}
+#dudas .left-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  #dudas .left-box {
+    flex-direction: column;
+  }
+}
+#dudas article {
+  display: flex;
+  flex-direction: column;
+  height: auto;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
   padding: 15px;
-  background-color: #1f3970;
+  background-color: rgb(47.5839160839, 87.493006993, 171.9160839161);
   color: #ffffff;
 }
-#section4 article h4 {
+#dudas article h4 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
 }
-#section4 article .whatsapp-button {
+#dudas article p {
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1;
+}
+#dudas article .whatsapp-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -370,63 +407,63 @@ img {
   width: 100%;
   background-color: #40cf4b;
   color: #ffffff;
-  margin-top: 20px;
-  border: none;
+  margin-top: auto;
+  border-color: #ffffff;
 }
-#section4 article .whatsapp-button i {
+#dudas article .whatsapp-button i {
   font-size: 1.7em;
 }
-#section4 article .whatsapp-button span {
+#dudas article .whatsapp-button span {
   width: -moz-max-content;
   width: max-content;
   flex-grow: 0;
   line-height: 1.2;
   text-align: center;
 }
-#section4 form {
+#dudas form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#section4 form .form-row {
+#dudas form .form-row {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-#section4 form .form-row input, #section4 form .form-row select {
+#dudas form .form-row input, #dudas form .form-row select {
   padding: 15px;
   border-radius: 10px;
   font-size: 1.2em;
 }
-#section4 form .form-row:last-of-type a {
+#dudas form .form-row:last-of-type a {
   background: none;
 }
-#section4 form .form-row:last-of-type .checkbox-row {
+#dudas form .form-row:last-of-type .checkbox-row {
   margin-left: 5px;
 }
-#section4 form .form-row:last-of-type .checkbox-row input[type=checkbox] {
+#dudas form .form-row:last-of-type .checkbox-row input[type=checkbox] {
   transform: scale(2);
   cursor: pointer;
 }
-#section4 form .form-row:last-of-type .checkbox-row span {
+#dudas form .form-row:last-of-type .checkbox-row span {
   font-size: 1.2em;
   margin-left: 10px;
 }
-#section4 form button {
+#dudas form button {
   font-family: "Poppins", sans-serif;
 }
 
-#section5 {
+#reviews {
   box-shadow: none;
   background-color: #f0f0f0;
 }
-#section5 .left-box h2 {
+#reviews .left-box h2 {
   color: #3c3c3c;
   box-shadow: none;
   border: none;
   text-shadow: none;
 }
-#section5 .left-box .slider-reviews-wrapper {
+#reviews .left-box .slider-reviews-wrapper {
   width: 60%;
   overflow: hidden;
   border-radius: 10px;
@@ -435,25 +472,25 @@ img {
   padding: 20px;
 }
 @media (max-width: 900px) {
-  #section5 .left-box .slider-reviews-wrapper {
+  #reviews .left-box .slider-reviews-wrapper {
     width: 100%;
   }
 }
-#section5 .left-box .slider-reviews-wrapper .reviews-logo {
+#reviews .left-box .slider-reviews-wrapper .reviews-logo {
   width: 250px;
   display: block;
   margin: 0 auto 30px;
 }
-#section5 .left-box .slider-reviews-wrapper .slider-reviews {
+#reviews .left-box .slider-reviews-wrapper .slider-reviews {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
   cursor: grab;
 }
-#section5 .left-box .slider-reviews-wrapper .slider-reviews:active {
+#reviews .left-box .slider-reviews-wrapper .slider-reviews:active {
   cursor: grabbing;
 }
-#section5 .left-box .slider-reviews-wrapper .review {
+#reviews .left-box .slider-reviews-wrapper .review {
   width: 100%;
   max-width: 400px;
   background-color: #e9e9e9;
@@ -468,10 +505,10 @@ img {
   -webkit-user-drag: none;
   transition: all 0.2s ease;
 }
-#section5 .left-box .slider-reviews-wrapper .review:hover {
+#reviews .left-box .slider-reviews-wrapper .review:hover {
   transform: scale(1.03);
 }
-#section5 .left-box .slider-reviews-wrapper .review .review-header {
+#reviews .left-box .slider-reviews-wrapper .review .review-header {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -480,26 +517,26 @@ img {
   border-radius: 100px;
   padding-right: 10px;
 }
-#section5 .left-box .slider-reviews-wrapper .review .review-header img {
+#reviews .left-box .slider-reviews-wrapper .review .review-header img {
   width: 50px;
   height: 50px;
   margin: 10px 0 0 10px;
 }
-#section5 .left-box .slider-reviews-wrapper .review .review-header .review-user h4 {
+#reviews .left-box .slider-reviews-wrapper .review .review-header .review-user h4 {
   font-family: "Oswald", sans-serif;
   font-size: 22px;
   color: #000000;
 }
-#section5 .left-box .slider-reviews-wrapper .review p {
+#reviews .left-box .slider-reviews-wrapper .review p {
   line-height: 1.6;
 }
-#section5 .left-box .slider-reviews-wrapper .slider-dots {
+#reviews .left-box .slider-reviews-wrapper .slider-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
 }
-#section5 .left-box .slider-reviews-wrapper .slider-dots .dot {
+#reviews .left-box .slider-reviews-wrapper .slider-dots .dot {
   width: 10px;
   height: 10px;
   margin-bottom: 10px;
@@ -508,25 +545,25 @@ img {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-#section5 .left-box .slider-reviews-wrapper .slider-dots .dot.active {
+#reviews .left-box .slider-reviews-wrapper .slider-dots .dot.active {
   background-color: #8c8c8c;
   transform: scale(1.3);
 }
 
-#section6 {
+#patrocinadores {
   box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-#section6 h2 {
+#patrocinadores h2 {
   color: #007a44;
   box-shadow: none;
   border: none;
   text-shadow: none;
 }
-#section6 .sponsors {
+#patrocinadores .sponsors {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -535,11 +572,11 @@ img {
   flex-wrap: wrap;
   flex-direction: row;
 }
-#section6 .sponsors img {
+#patrocinadores .sponsors img {
   max-width: 150px;
   transition: all 0.2s ease;
 }
-#section6 .sponsors img:hover {
+#patrocinadores .sponsors img:hover {
   transform: scale(1.1);
 }
 
@@ -578,7 +615,4 @@ body::after {
     content: "BREAKPOINT SM";
     background-color: cyan;
   }
-}
-body::after {
-  content: none;
 }/*# sourceMappingURL=style.css.map */

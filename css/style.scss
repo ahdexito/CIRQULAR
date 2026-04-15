@@ -17,11 +17,11 @@ $color-global-button: #e3ff38;
 $color-button-whatsapp: #40cf4b;
 
 $color-global-1: #57bf8c;
-$color-global-2-dark: #007a44;
-$color-global-3: #3ec1d3;
-$color-global-3-dark: #00446d;
-$color-global-4: #bae1f6;
-$color-global-4-dark: #1f3970;
+$color-global-1-dark: #007a44;
+$color-global-2: #3ec1d3;
+$color-global-2-dark: #00446d;
+$color-global-3: #bae1f6;
+$color-global-3-dark: #1f3970;
 
 
 // ======================================================== //
@@ -93,7 +93,7 @@ body {
 }
 
 section {
-    padding: 20px 10px 100px;
+    padding: 20px 5% 100px;
     gap: 20px;
     background-color: var(--section-color);
     box-shadow: inset $color-shade 0 0 50px;
@@ -119,27 +119,26 @@ section {
         gap: 20px;
 
         @include flex-center;
-
-        @include respond-to(md) {
-            max-width: $breakpoint-sm;
-            margin: auto;
-        }
     }
 
     // Alternar colores de artículos
-    &:nth-of-type(2) { 
+    &#que-es { 
         --section-color: #{$color-global-1}; 
+        --section-dark-color: #{$color-global-1-dark};
+    }
+    &#como-funciona { 
+        --section-color: #{$color-global-2}; 
         --section-dark-color: #{$color-global-2-dark};
     }
-    &:nth-of-type(3) { 
+    &#para-ti {
+        --section-color: #{$color-global-1};
+        --section-dark-color: #{$color-global-1-dark};
+    }
+    &#dudas { 
         --section-color: #{$color-global-3}; 
         --section-dark-color: #{$color-global-3-dark};
     }
-    &:nth-of-type(4) { 
-        --section-color: #{$color-global-4}; 
-        --section-dark-color: #{$color-global-4-dark};
-    }
-    &:nth-of-type(5) { --section-color: #{$color-light}; }
+    &#reviews { --section-color: #{$color-light}; }
 }
 
 .side-image {
@@ -296,7 +295,7 @@ img {
 // === SPECIFIC STYLES === //
 
 // LANDING
-#section1 {
+#landing {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -342,14 +341,14 @@ img {
 }
 
 // "¿QUÉ ES?"
-#section2 {
+#que-es {
     ul li {
         margin-bottom: 15px;
     }
 }
 
 // "¿CÓMO FUNCIONA?"
-#section3 {
+#como-funciona {
     flex-direction: column;
 
     .articles-container {
@@ -360,6 +359,18 @@ img {
             flex-direction: column;
         }
     }
+
+    article {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            font-size: 1em;
+            margin-top: 20px;
+            width: fit-content;
+        }
+    }
+    
 
     .card {
         width: 100%;
@@ -390,36 +401,88 @@ img {
         }
     }
 
-    @include respond-to(lg) { .right-box .button { display: none; } }
-    @include respond-to(xl) { .right-box .button { display: none; } }
-    @include respond-to(md) { 
-        .left-box .button { display: none; } 
-        .right-box .button { display: block; } 
+    // @include respond-to(lg) { .right-box .button { display: none; } }
+    // @include respond-to(xl) { .right-box .button { display: none; } }
+    // @include respond-to(md) { 
+    //     .left-box .button { display: none; } 
+    //     .right-box .button { display: block; } 
+    // }
+}
+
+// "ES PARA TI SI..."
+#para-ti {
+    flex-direction: column;
+    
+    article {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            flex: 1;
+        }
+
+        i {
+            font-size: 2.3em;
+            flex: 0;
+            color: var(--section-dark-color);
+        }
+    }
+
+    .card {
+        background-color: var(--section-dark-color);
+        padding: 20px;
+        border: 3px solid $color-light;
+        border-radius: 10px;
+        box-shadow: $color-shade 5px 5px 5px;
+
+        @include flex-center;
+
+        h4 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
     }
 }
 
 // "¿ALGUNA DUDA?"
-#section4 {
+#dudas {
+    flex-direction: column;
+
     .left-box {
-        max-width: 60%;
+        @include flex-center;
+        
+        flex-direction: row;
+        align-items: stretch;
+        gap: 20px;
 
         @include respond-to(md) {
-            max-width: $breakpoint-sm;
+            flex-direction: column;
         }
     }
 
     article {
-        @include flex-center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
 
         box-shadow: $color-shade 5px 5px 5px;
         padding: 15px;
-        background-color: $color-global-4-dark;
+        background-color: lighten($color-global-3-dark, $amount: 15);
         color: $color-light;
 
         h4 {
             font-size: 24px;
             text-align: center;
             margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.3em;
+            text-align: center;
+            margin-bottom: 20px;
+            flex: 1;
         }
 
         .whatsapp-button {
@@ -430,8 +493,8 @@ img {
             width: 100%;
             background-color: $color-button-whatsapp;
             color: $color-light;
-            margin-top: 20px;
-            border: none;
+            margin-top: auto;
+            border-color: $color-light;
 
             i {
                 font-size: 1.7em;
@@ -490,7 +553,7 @@ img {
 }
 
 // RESEÑAS
-#section5 {
+#reviews {
     box-shadow: none;
     background-color: #f0f0f0;
 
@@ -609,13 +672,13 @@ img {
 }
 
 // PATROCINADORES
-#section6 {
+#patrocinadores {
     box-shadow: none;
 
     @include flex-center;
 
     h2 { 
-        color: $color-global-2-dark;
+        color: $color-global-1-dark;
         box-shadow: none;
         border: none;
         text-shadow: none;
@@ -680,4 +743,4 @@ body::after {
         background-color: cyan;
     }
 }
-body::after { content: none; }
+//body::after { content: none; }

@@ -7,7 +7,7 @@ const FADE_DURATION = 1500;   // ms que dura el fundido cruzado
 const ZOOM_SCALE    = 1.08;   // nivel de zoom (1.05 = sutil, 1.15 = pronunciado)
 // ═══════════════════════════════
 
-const section = document.getElementById('section1');
+const section = document.getElementById('landing');
 let i = 0;
 
 // Precarga todas las imágenes al inicio
