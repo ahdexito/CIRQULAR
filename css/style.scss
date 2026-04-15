@@ -100,25 +100,38 @@ section {
 
     @include flex-center;
 
-    @include respond-to(xl) { 
-        flex-direction: row; 
+    .row {
+        @include flex-center;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
         align-items: stretch;
 
-        .right-box {
-            max-width: 40%;
+        @include respond-to(md) {
+            flex-direction: column;
+            align-items: center;
         }
     }
-    @include respond-to(lg) { 
-        flex-direction: row;
-        align-items: stretch;
-    }
-    @include respond-to(md) { flex-direction: column; }
-    
-    .left-box, .right-box {
+
+    .column {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         width: 100%;
         gap: 20px;
 
-        @include flex-center;
+        @include respond-to(md) {
+            max-width: $breakpoint-sm;
+        }
+
+        &.image-container {
+            min-height: 200px;
+
+            @include respond-to(lg) {
+                height: auto;
+            }
+        }
     }
 
     // Alternar colores de artículos
@@ -128,6 +141,10 @@ section {
     }
     &#como-funciona { 
         --section-color: #{$color-global-2}; 
+        --section-dark-color: #{$color-global-2-dark};
+    }
+    &#mas-info {
+        --section-color: #{$color-global-2};
         --section-dark-color: #{$color-global-2-dark};
     }
     &#para-ti {
@@ -142,18 +159,38 @@ section {
 }
 
 .side-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
     border: 5px solid var(--section-dark-color);
     box-shadow: $color-shade 5px 5px 10px;
 
     @include respond-to(lg) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
+        object-fit: cover;
     }
     @include respond-to(xl) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
+        object-fit: cover;
     }
+    @include respond-to(md) {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+}
+
+hr {
+    border: 5px solid var(--section-dark-color);
+    border-radius: 10px;
+    margin: 30px 0;
+    width: 100%;
+    box-shadow: $color-shade 5px 5px 5px;
 }
 
 article {
@@ -172,6 +209,7 @@ article {
         border: 3px solid var(--section-dark-color);
         border-radius: 10px;
         margin: 20px 0;
+        box-shadow: none;
     }
 
     ul {
@@ -345,15 +383,22 @@ img {
     ul li {
         margin-bottom: 15px;
     }
+
+    .row {
+        flex-direction: row-reverse;
+
+        @include respond-to(md) {
+            flex-direction: column;
+        }
+    }
 }
 
 // "¿CÓMO FUNCIONA?"
 #como-funciona {
     flex-direction: column;
 
-    .articles-container {
-        display: flex;
-        gap: 20px;
+    .row:nth-of-type(2) {
+        flex-direction: row-reverse;
 
         @include respond-to(md) {
             flex-direction: column;
@@ -370,7 +415,6 @@ img {
             width: fit-content;
         }
     }
-    
 
     .card {
         width: 100%;
@@ -400,13 +444,6 @@ img {
             }
         }
     }
-
-    // @include respond-to(lg) { .right-box .button { display: none; } }
-    // @include respond-to(xl) { .right-box .button { display: none; } }
-    // @include respond-to(md) { 
-    //     .left-box .button { display: none; } 
-    //     .right-box .button { display: block; } 
-    // }
 }
 
 // "ES PARA TI SI..."
@@ -450,12 +487,8 @@ img {
 #dudas {
     flex-direction: column;
 
-    .left-box {
-        @include flex-center;
-        
-        flex-direction: row;
-        align-items: stretch;
-        gap: 20px;
+    .row {
+        flex-direction: row-reverse;
 
         @include respond-to(md) {
             flex-direction: column;
@@ -466,11 +499,17 @@ img {
         display: flex;
         flex-direction: column;
         height: auto;
-
         box-shadow: $color-shade 5px 5px 5px;
         padding: 15px;
         background-color: lighten($color-global-3-dark, $amount: 15);
         color: $color-light;
+
+        &:nth-of-type(2) {
+            background: none;
+            box-shadow: none;
+            color: var(--section-dark-color);
+            margin-top: 50px;
+        }
 
         h4 {
             font-size: 24px;
@@ -557,117 +596,116 @@ img {
     box-shadow: none;
     background-color: #f0f0f0;
 
-    .left-box {
-        h2 { 
-            color: #3c3c3c;
-            box-shadow: none;
-            border: none;
-            text-shadow: none;
+    h2 { 
+        color: #3c3c3c;
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+    }
+
+    .slider-reviews-wrapper {
+        width: 60%;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: $color-shade 0 0 10px;
+        padding: 20px;
+
+        @include respond-to(md) {
+            width: 100%;
         }
 
-        .slider-reviews-wrapper {
-            width: 60%;
-            overflow: hidden;
+        .reviews-logo {
+            width: 250px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+
+        .slider-reviews {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            cursor: grab;
+
+            &:active { 
+                cursor: grabbing; 
+            }
+        }
+
+        .review {
+            width: 100%;
+            max-width: 400px;
+            background-color: #e9e9e9;
+            color: $color-dark;
             border-radius: 10px;
-            background-color: #fff;
-            box-shadow: $color-shade 0 0 10px;
-            padding: 20px;
+            padding: 25px;
+            box-shadow: 
+                inset #8c8c8c 10px 0 0,
+                $color-shade 5px 5px 10px;
+            flex-shrink: 0;
 
-            @include respond-to(md) {
-                width: 100%;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+
+            transition: all 0.2s ease;
+
+            &:hover {
+                transform: scale(1.03);
             }
-
-            .reviews-logo {
-                width: 250px;
-                display: block;
-                margin: 0 auto 30px;
-            }
-
-            .slider-reviews {
+            
+            .review-header {
                 display: flex;
+                align-items: center;
                 gap: 20px;
-                transition: transform 0.5s ease;
-                cursor: grab;
+                margin-bottom: 10px;
+                background-color: #ffffff;
+                border-radius: 100px;
+                padding-right: 10px;
 
-                &:active { 
-                    cursor: grabbing; 
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 10px 0 0 10px;
+                }
+
+                .review-user {
+                    h4 {
+                        font-family: $font-secondary;
+                        font-size: 22px;
+                        color: $color-dark;
+                    }
                 }
             }
 
-            .review {
-                width: 100%;
-                max-width: 400px;
-                background-color: #e9e9e9;
-                color: $color-dark;
-                border-radius: 10px;
-                padding: 25px;
-                box-shadow: 
-                    inset #8c8c8c 10px 0 0,
-                    $color-shade 5px 5px 10px;
-                flex-shrink: 0;
-
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                -webkit-user-drag: none;
-
-                transition: all 0.2s ease;
-
-                &:hover {
-                    transform: scale(1.03);
-                }
-                
-                .review-header {
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    margin-bottom: 10px;
-                    background-color: #ffffff;
-                    border-radius: 100px;
-                    padding-right: 10px;
-
-                    img {
-                        width: 50px;
-                        height: 50px;
-                        margin: 10px 0 0 10px;
-                    }
-
-                    .review-user {
-                        h4 {
-                            font-family: $font-secondary;
-                            font-size: 22px;
-                            color: $color-dark;
-                        }
-                    }
-                }
-
-                p { 
-                    line-height: 1.6; 
-                }
+            p { 
+                line-height: 1.6; 
             }
+        }
 
-            .slider-dots {
-                display: flex;
-                justify-content: center;
-                gap: 8px;
-                margin-top: 15px;
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
 
-                .dot {
-                    width: 10px;
-                    height: 10px;
-                    margin-bottom: 10px;
-                    border-radius: 50%;
-                    background-color: #dddcdc;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease, transform 0.3s ease;
+            .dot {
+                width: 10px;
+                height: 10px;
+                margin-bottom: 10px;
+                border-radius: 50%;
+                background-color: #dddcdc;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
 
-                    &.active {
-                        background-color: #8c8c8c;
-                        transform: scale(1.3);
-                    }
+                &.active {
+                    background-color: #8c8c8c;
+                    transform: scale(1.3);
                 }
             }
         }
+        
     }
 }
 
@@ -743,4 +781,4 @@ body::after {
         background-color: cyan;
     }
 }
-//body::after { content: none; }
+body::after { content: none; }

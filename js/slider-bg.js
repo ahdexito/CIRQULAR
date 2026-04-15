@@ -1,7 +1,14 @@
 // ═══════════════════════════════
 //  CONFIGURACIÓN DEL SLIDER
 // ═══════════════════════════════
-const SLIDES        = ['img/slide1.jpg', 'img/slide2.jpg', 'img/slide3.jpg', 'img/slide4.jpg', 'img/slide5.jpg', 'img/slide6.jpg'];
+const SLIDES        = [
+    'img/slider/slide1.jpg', 
+    'img/slider/slide2.jpg', 
+    'img/slider/slide3.jpg', 
+    'img/slider/slide4.jpg', 
+    'img/slider/slide5.jpg', 
+    'img/slider/slide6.jpg'
+];
 const INTERVAL      = 5000;   // ms entre slides
 const FADE_DURATION = 1500;   // ms que dura el fundido cruzado
 const ZOOM_SCALE    = 1.08;   // nivel de zoom (1.05 = sutil, 1.15 = pronunciado)
