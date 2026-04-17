@@ -202,7 +202,7 @@ h1, h2, h3 {
 }
 
 h2 {
-  border: 5px double #ffffff;
+  border: 10px double #ffffff;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
   text-shadow: rgba(42, 42, 42, 0.4901960784) 3px 3px;
 }
@@ -284,6 +284,7 @@ img {
   background: #000;
   text-align: center;
   flex-direction: column;
+  gap: 40px;
 }
 #landing::after {
   content: "";
@@ -299,17 +300,16 @@ img {
 }
 #landing #logo {
   width: 200px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 #landing h1 {
-  font-size: 50px;
+  font-size: 46px;
 }
 #landing .text-1 {
   font-size: 26px;
-  margin-bottom: 50px;
 }
 #landing .text-2 {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #landing h1, #landing p {
   text-shadow: #000 0 0 5px;
@@ -429,8 +429,11 @@ img {
 #dudas article:nth-of-type(2) {
   background: none;
   box-shadow: none;
-  color: var(--section-dark-color);
   margin-top: 50px;
+}
+#dudas article:nth-of-type(2) p {
+  color: var(--section-dark-color);
+  font-weight: bold;
 }
 #dudas article h4 {
   font-size: 24px;

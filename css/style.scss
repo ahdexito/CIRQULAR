@@ -255,7 +255,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    border: 5px double $color-light;
+    border: 10px double $color-light;
     box-shadow: $color-shade 5px 5px 5px;
     text-shadow: $color-shade 3px 3px;
 }
@@ -340,6 +340,7 @@ img {
     background: #000;
     text-align: center;
     flex-direction: column;
+    gap: 40px;
 
     &::after {
         content: '';
@@ -357,20 +358,20 @@ img {
 
     #logo {
         width: 200px;
-        margin: 0 auto 20px;
+        margin: 0 auto;
     }
 
     h1 {
-        font-size: 50px;
+        font-size: 46px;
     }
 
     .text-1 {
         font-size: 26px;
-        margin-bottom: 50px;
+        //margin-bottom: 40px;
     }
 
     .text-2 {
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     h1, p {
@@ -507,8 +508,12 @@ img {
         &:nth-of-type(2) {
             background: none;
             box-shadow: none;
-            color: var(--section-dark-color);
             margin-top: 50px;
+
+            p {
+                color: var(--section-dark-color);
+                font-weight: bold;
+            }
         }
 
         h4 {
